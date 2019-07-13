@@ -1,0 +1,44 @@
+import java.text.decimalFormat;
+
+import java.swing.JOptionPane;
+
+public class bmiCalculator
+{
+	 static String BMIOutput
+	 
+	 public static void main (String[] args)
+	 {
+		 //User enters both height and weight when prompted.
+		 double height =Double.parseDouble(JOptionPane.showInputDialog("Please Enter Your Height. (In M)"));
+		 double weight =Double.parseDouble(JOptionPane.showInputDialog("Please Enter Your Weight. (In K.G)")),
+		 
+		 double BMI = weight / (height * height)
+		 decimalFormat df = new decimalFormat("#.##");
+		 
+		 
+		 String output = "With a height of " + height + " And a weight of " + weight + "Your BMI is " + df.format(BMI);
+		 JOptionPane.showMessageDialog(null, output);
+		 
+		 
+		 
+		 if(BMI < 18.5)
+		 {
+			 BMIOutput = "A BMI of " + df.format(BMI) + "Is Classified as Under Weight.";
+		 }
+		 else if(BMI >=18.5 && BMI = < 24.9 )
+		 {
+			 BMIOutput = "A BMI of " + df.format(BMI) + "Is Classed in the Healthy Range, Nice work!.";
+		 }
+		 else if (BMI > = 25 && BMI = <29.9 )
+		 {
+			 BMIOutput = "A BMI of " + df.format(BMI) + "Is Classed as Overweight, Eat Better.";
+		 }
+		 else if (BMI = > 30)
+		 {
+			 BMIOutput = "A BMI of " + df.format(BMI) + "Is Classed as Obese, you need to lose weight.";
+		 }
+		 
+		 JOptionPane.showMessageDialog(null, BMIOutput);
+		 
+	 }
+}
